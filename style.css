@@ -1,0 +1,267 @@
+html, body {
+    height: 100%;
+    min-width: 100%;
+    background-color: rgb(255, 255, 235);
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    /* cursor: none; */
+    caret-color: transparent;
+}
+
+/* .cursor {
+    height: 3rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    border: solid black;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    pointer-events: none;
+    backdrop-filter: grayscale(90%);
+    z-index: 99;
+} */
+
+.tw-name {
+    position: absolute;
+    top: 0px;
+    height: 60%;
+    width: 100%;
+    mask-image: url(assets/SVG_Name_Files/T.svg), 
+                url(assets/SVG_Name_Files/O.svg), 
+                url(assets/SVG_Name_Files/M.svg), 
+                url(assets/SVG_Name_Files/H.svg), 
+                url(assets/SVG_Name_Files/Big_O.svg), 
+                url(assets/SVG_Name_Files/Little_O.svg), 
+                url(assets/SVG_Name_Files/W.svg), 
+                url(assets/SVG_Name_Files/E.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 30%;
+    -webkit-mask-image: url(assets/SVG_Name_Files/T.svg), 
+                        url(assets/SVG_Name_Files/O.svg), 
+                        url(assets/SVG_Name_Files/M.svg), 
+                        url(assets/SVG_Name_Files/H.svg), 
+                        url(assets/SVG_Name_Files/Big_O.svg), 
+                        url(assets/SVG_Name_Files/Little_O.svg), 
+                        url(assets/SVG_Name_Files/W.svg), 
+                        url(assets/SVG_Name_Files/E.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 30%;
+    animation: type-writer 4s step-end forwards;
+}
+
+.tw-cursor {
+    position: absolute;
+    top: 0px;
+    height: 60%;
+    width: 100%;
+    mask-image: url(assets/SVG_Name_Files/Cursor.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 30%;
+    -webkit-mask-image: url(assets/SVG_Name_Files/Cursor.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: 30%;
+    animation: move-cursor 4s step-end forwards, blink-cursor 1.2s step-end 4.1s infinite;
+}
+
+@media screen and (max-width: 600px) {
+    .tw-name {
+        mask-size: 60%;
+        -webkit-mask-size: 60%;
+    }
+    .tw-cursor {
+        mask-size: 60%;
+        -webkit-mask-size: 60%;
+    }
+}
+
+.bg-img {
+    position: absolute;
+    height: 300vh;
+    width: 300vw;
+    top: -150vh;
+    left: -150vw;
+    object-fit: cover;
+}
+
+.footer-expander {
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+.footer-expander-arrow {
+    pointer-events: none;
+    user-select: none;
+}
+
+.footer {
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    background: #bbb;
+    max-height: 0px;
+    width: 100%;
+    transition: max-height 0.3s ease-out;
+}
+
+@keyframes blink-cursor {
+    from, to {transform: scale(1,1);}
+    50% {transform: scale(0,0);}
+}
+
+@keyframes move-cursor {
+    0% {-webkit-mask-position: 6.5%;}
+    41% {-webkit-mask-position: 14%;}
+    48% {-webkit-mask-position: 17.8%;}
+    52% {-webkit-mask-position: 25%;}
+    56% {-webkit-mask-position: 26%;}
+    63% {-webkit-mask-position: 33%;}
+    68% {-webkit-mask-position: 38%;}
+    71% {-webkit-mask-position: 44%;}
+    74% {-webkit-mask-position: 50%;}
+    82% {-webkit-mask-position: 44%;}
+    85% {-webkit-mask-position: 38%;}
+    88% {-webkit-mask-position: 33%;}
+    93% {-webkit-mask-position: 38%;}
+    96% {-webkit-mask-position: 44%;}
+    100% {-webkit-mask-position: 50%;}
+}
+
+/* Revised to mask-position to keep bg images inline with each other 
+@keyframes move-cursor {
+    0% {transform: translateX(-30%);}
+    41% {transform: translateX(-25.71%);}
+    48% {transform: translateX(-22.14%);}
+    52% {transform: translateX(-17.86%);}
+    56% {transform: translateX(-16.43%);}
+    63% {transform: translateX(-12.14%);}
+    68% {transform: translateX(-8.57%);}
+    71% {transform: translateX(-3.93%);}
+    74% {transform: translateX(0%);}
+    82% {transform: translateX(-3.93%);}
+    85% {transform: translateX(-8.57%);}
+    88% {transform: translateX(-12.14%);}
+    93% {transform: translateX(-8.57%);}
+    96% {transform: translateX(-3.93%);}
+    100% {transform: translateX(0%);}
+} */
+
+/* Revised to percentages to allow for flex sizing
+@keyframes move-cursor {
+    0% {transform: translateX(-420px);}
+    41% {transform: translateX(-360px);}
+    48% {transform: translateX(-310px);}
+    52% {transform: translateX(-250px);}
+    56% {transform: translateX(-230px);}
+    63% {transform: translateX(-170px);}
+    68% {transform: translateX(-120px);}
+    71% {transform: translateX(-55px);}
+    74% {transform: translateX(0px);}
+    82% {transform: translateX(-55px);}
+    85% {transform: translateX(-120px);}
+    88% {transform: translateX(-170px);}
+    93% {transform: translateX(-120px);}
+    96% {transform: translateX(-55px);}
+    99% {transform: translateX(0px);}
+} */
+
+@keyframes type-writer {
+    0% {-webkit-mask-image: 
+            url()
+        ;}
+    42% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg)
+        ;}
+    49% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg)
+        ;}
+    53% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg)
+        ;}
+    64% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg), 
+            url(assets/SVG_Name_Files/H.svg)
+        ;}
+    69% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg), 
+            url(assets/SVG_Name_Files/H.svg), 
+            url(assets/SVG_Name_Files/Big_O.svg)
+        ;}
+    72% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg), 
+            url(assets/SVG_Name_Files/H.svg), 
+            url(assets/SVG_Name_Files/Big_O.svg), 
+            url(assets/SVG_Name_Files/W.svg)
+        ;}
+    75% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg), 
+            url(assets/SVG_Name_Files/H.svg), 
+            url(assets/SVG_Name_Files/Big_O.svg), 
+            url(assets/SVG_Name_Files/W.svg), 
+            url(assets/SVG_Name_Files/E.svg) 
+        ;}
+    82% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg), 
+            url(assets/SVG_Name_Files/H.svg), 
+            url(assets/SVG_Name_Files/Big_O.svg), 
+            url(assets/SVG_Name_Files/W.svg)
+        ;}
+    85% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg), 
+            url(assets/SVG_Name_Files/H.svg), 
+            url(assets/SVG_Name_Files/Big_O.svg)
+        ;}
+    88% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg), 
+            url(assets/SVG_Name_Files/H.svg)
+        ;}
+    94% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg), 
+            url(assets/SVG_Name_Files/H.svg), 
+            url(assets/SVG_Name_Files/Little_O.svg)
+        ;}
+    97% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg), 
+            url(assets/SVG_Name_Files/H.svg), 
+            url(assets/SVG_Name_Files/Little_O.svg), 
+            url(assets/SVG_Name_Files/W.svg)
+        ;}
+    100% {-webkit-mask-image: 
+            url(assets/SVG_Name_Files/T.svg), 
+            url(assets/SVG_Name_Files/O.svg), 
+            url(assets/SVG_Name_Files/M.svg), 
+            url(assets/SVG_Name_Files/H.svg), 
+            url(assets/SVG_Name_Files/Little_O.svg), 
+            url(assets/SVG_Name_Files/W.svg), 
+            url(assets/SVG_Name_Files/E.svg) 
+        ;}
+}
