@@ -1,0 +1,28 @@
+h1,h2 {
+    /* Tom Howe */
+    text-align: center;
+    margin: 0;
+
+    font-family: Noto Sans Display;
+    font-style: normal;
+    font-weight: 200;
+
+    color: #6D6D6D;
+}
+
+h1 {
+    line-height: 120px;
+    width: max-content;
+    font-size: 96px;
+}
+
+h2 {
+    font-size: 32px;
+}
+
+input {
+    border: 1px solid #6D6D6D;
+    width: 620px;
+    height: 60px;
+    border-radius: 30px;
+}
